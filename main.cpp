@@ -5,6 +5,7 @@
 using namespace std;
 
 int main() {
+    const int numScores = 5;
     string studentName = "";
     int studentCount = 0;
     double sumOfAverages = 0.0;
@@ -15,8 +16,8 @@ int main() {
     while (studentName != "end") {
         int scoreSum = 0;
 
-        // Read 5 scores for the current student
-        for (int scoreIndex = 1; scoreIndex <= 5; scoreIndex++) {
+        // Read scores for the current student
+        for (int scoreIndex = 1; scoreIndex <= numScores; scoreIndex++) {
             int currentScore = 0;
             bool validScore = false;
 
@@ -42,7 +43,7 @@ int main() {
         // Clear any leftover newline before reading the next student name
         cin.ignore(1000, '\n');
 
-        double studentAverage = static_cast<double>(scoreSum) / 5.0;
+        double studentAverage = static_cast<double>(scoreSum) / numScores;
         char letterGrade = 'F';
 
         if (studentAverage >= 90.0) {
